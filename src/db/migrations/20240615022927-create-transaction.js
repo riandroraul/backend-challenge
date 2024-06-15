@@ -9,14 +9,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.BIGINT,
       },
-      vendor: {
-        type: Sequelize.STRING,
+      vendor_id: {
+        type: Sequelize.BIGINT,
       },
-      customer: {
-        type: Sequelize.STRING,
+      customer_id: {
+        type: Sequelize.BIGINT,
       },
-      material: {
-        type: Sequelize.STRING,
+      material_id: {
+        type: Sequelize.BIGINT,
       },
       transaction_date: {
         type: Sequelize.DATE,

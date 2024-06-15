@@ -8,7 +8,7 @@ Before you begin, make sure you have the following installed:
 
 - Node.js
 - npm or yarn
-- git
+- GIT
 - MySQL
 
 ### Installation guide

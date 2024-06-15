@@ -7,9 +7,7 @@ const getUsers = async (req: Request, res: Response): Promise<Response> => {
     const users = await User.findAll();
     return res
       .status(200)
-      .send(
-        Helper.responseSuccess(true, 200, "success get all user", users, null)
-      );
+      .send(Helper.responseSuccess(true, 200, "Users were found", users, null));
   } catch (error: any) {
     return Helper.errorResult(error, res, 400);
   }
@@ -24,7 +22,7 @@ const getUserById = async (req: Request, res: Response): Promise<Response> => {
     }
     return res
       .status(200)
-      .send(Helper.responseSuccess(true, 200, "User founded", user, null));
+      .send(Helper.responseSuccess(true, 200, "User found", user, null));
   } catch (error: any) {
     return Helper.errorResult(error, res, 400);
   }
