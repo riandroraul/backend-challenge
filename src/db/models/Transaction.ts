@@ -2,6 +2,7 @@ import { DataTypes, Model, Optional } from "sequelize";
 
 import connection from "../../config/db_connection";
 import User from "./User";
+import Material from "./Material";
 
 interface TransactionAttributes {
   transaction_id: number;
@@ -64,6 +65,8 @@ Transaction.init(
   }
 );
 
-Transaction.belongsTo(User, { foreignKey: "user_id" });
+Transaction.belongsTo(User, { as: "Vendor", foreignKey: "vendor_id" });
+Transaction.belongsTo(User, { as: "Customer", foreignKey: "customer_id" });
+Transaction.belongsTo(Material, { foreignKey: "material_id" });
 
 export default Transaction;

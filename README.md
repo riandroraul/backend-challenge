@@ -9,8 +9,9 @@ Before you begin, make sure you have the following installed:
 - Node.js
 - npm or yarn
 - git
+- MySQL
 
-### Installation
+### Installation guide
 
 ### clone project
 
