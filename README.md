@@ -10,7 +10,7 @@ Before you begin, make sure you have the following installed:
 - npm or yarn
 - git
 
-### Installation
+### Installation guide
 
 ### clone project
 

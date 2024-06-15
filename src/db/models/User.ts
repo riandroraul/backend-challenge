@@ -28,6 +28,9 @@ User.init(
       autoIncrement: true,
       primaryKey: true,
       type: DataTypes.BIGINT,
+      validate: {
+        isInt: true,
+      },
     },
     username: {
       allowNull: true,

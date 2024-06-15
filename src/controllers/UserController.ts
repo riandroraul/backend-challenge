@@ -24,7 +24,7 @@ const getUserById = async (req: Request, res: Response): Promise<Response> => {
     }
     return res
       .status(200)
-      .send(Helper.responseSuccess(true, 200, "user founded", user, null));
+      .send(Helper.responseSuccess(true, 200, "User founded", user, null));
   } catch (error: any) {
     return Helper.errorResult(error, res, 400);
   }
@@ -49,13 +49,14 @@ const updateUser = async (req: Request, res: Response): Promise<Response> => {
     const { user_id } = req.params;
     const { username } = req.body;
     const userUpdated = await User.update({ username }, { where: { user_id } });
-    if (userUpdated) {
+
+    if (userUpdated[0] === 0) {
       throw new Error("User not found");
     }
     return res
       .status(200)
       .send(
-        Helper.responseSuccess(true, 201, "new user created", userUpdated, null)
+        Helper.responseSuccess(true, 201, "User updated", userUpdated, null)
       );
   } catch (error: any) {
     return Helper.errorResult(error, res, 400);
@@ -70,7 +71,9 @@ const deleteUser = async (req: Request, res: Response): Promise<Response> => {
         user_id,
       },
     });
-    if (!userDeleted) {
+    console.log(userDeleted);
+
+    if (userDeleted === 0) {
       throw new Error("User not found");
     }
     return res
