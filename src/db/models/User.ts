@@ -1,24 +1,44 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
+import { DataTypes, Model, Optional } from "sequelize";
+
+import connection from "../../config/db_connection";
+
+interface UserAttributes {
+  user_id: number;
+  username: string | null;
+
+  createAt?: Date;
+  updateAt?: Date;
+}
+
+export interface UserInput extends Optional<UserAttributes, "user_id"> {}
+export interface UserOutput extends Required<UserAttributes> {}
+
+class User extends Model<UserAttributes, UserInput> implements UserAttributes {
+  public user_id!: number;
+  public username!: string;
+
+  public createAt!: Date;
+  public updateAt!: Date;
+}
+
+User.init(
+  {
+    user_id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.BIGINT,
+    },
+    username: {
+      allowNull: true,
+      type: DataTypes.STRING,
+    },
+  },
+  {
+    timestamps: true,
+    sequelize: connection,
+    underscored: false,
   }
-  User.init({
-    user_id: DataTypes.NUMBER,
-    username: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'User',
-  });
-  return User;
-};
+);
+
+export default User;
