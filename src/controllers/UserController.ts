@@ -69,7 +69,6 @@ const deleteUser = async (req: Request, res: Response): Promise<Response> => {
         user_id,
       },
     });
-    console.log(userDeleted);
 
     if (userDeleted === 0) {
       throw new Error("User not found");

@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "8d3be0df-c87c-40e3-aa50-a01ce7406cb3",
+		"name": "backend challenge sanberhub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "17176426",
+		"_collection_link": "https://orange-comet-491842.postman.co/workspace/My-Workspace~dba4cc44-591d-44a3-84b4-24b1221609df/collection/17176426-8d3be0df-c87c-40e3-aa50-a01ce7406cb3?action=share&source=collection_link&creator=17176426"
+	},
+	"item": [
+		{
+			"name": "User Service",
+			"item": [
+				{
+					"name": "getAllUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{be_sanberhub}}/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{be_sanberhub}}/api/create-user"
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"test updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{be_sanberhub}}/api/update-user/7"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{be_sanberhub}}/api/delete-user/7"
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{be_sanberhub}}/api/user/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Material Service",
+			"item": [
+				{
+					"name": "getAllMaterials",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{be_sanberhub}}/api/materials"
+					},
+					"response": []
+				},
+				{
+					"name": "createMaterial",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"material_name\": \"material 5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{be_sanberhub}}/api/create-material"
+					},
+					"response": []
+				},
+				{
+					"name": "updateMaterial",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"material_name\": \"material 5 updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{be_sanberhub}}/api/update-material/5"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMaterial",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{be_sanberhub}}/api/delete-material/5"
+					},
+					"response": []
+				},
+				{
+					"name": "getMaterialById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{be_sanberhub}}/api/material/5"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction Service",
+			"item": [
+				{
+					"name": "createTransaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vendor_id\": 2,\r\n    \"material_id\": 1,\r\n    \"transaction_date\": \"2024-06-12\",\r\n    \"customer_id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{be_sanberhub}}/api/create-transaction"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllTransaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{be_sanberhub}}/api/transactions"
+					},
+					"response": []
+				},
+				{
+					"name": "getTransactionById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{be_sanberhub}}/api/transaction/1"
+					},
+					"response": []
+				},
+				{
+					"name": "updateTransaction",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vendor_id\": 2,\r\n    \"material_id\": 2,\r\n    \"transaction_date\": \"2023-06-12\",\r\n    \"customer_id\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{be_sanberhub}}/api/update-transaction/7"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTransaction",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{be_sanberhub}}/api/delete-transaction/2"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -38,7 +38,6 @@ const getTransactionById = async (
         { model: Material, attributes: ["material_name"], as: "material" },
       ],
     });
-    console.log(transaction);
     if (!transaction) {
       throw new Error("Transaction not found");
     }

@@ -28,7 +28,6 @@ const getMaterialById = async (
   try {
     const { material_id } = req.params;
     const material = await Material.findByPk(material_id);
-    console.log(material);
 
     if (!material) {
       throw new Error("Material not found");
@@ -77,7 +76,6 @@ const updateMaterial = async (
       { material_name },
       { where: { material_id } }
     );
-    // console.log(materialUpdated);
 
     if (materialUpdated[0] == 0) {
       throw new Error("Material not found");
