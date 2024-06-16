@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-postman collection can be access here [backend challenge sanberhub.postman_collection.json](backend challenge sanberhub.postman_collection.json)
+postman collection can be access here [backend_challenge_sanberhub.postman_collection.json](backend_challenge_sanberhub.postman_collection.json)
 
 ### Prerequisites
 
