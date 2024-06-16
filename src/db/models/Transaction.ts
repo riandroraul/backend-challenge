@@ -6,9 +6,9 @@ import Material from "./Material";
 
 interface TransactionAttributes {
   transaction_id: number;
-  vendor: string | null;
-  customer: string | null;
-  material: string | null;
+  vendor_id: number;
+  customer_id: number;
+  material_id: number;
   transaction_date: Date;
 
   createAt?: Date;
@@ -24,9 +24,9 @@ class Transaction
   implements TransactionAttributes
 {
   public transaction_id!: number;
-  public vendor!: string;
-  public customer!: string;
-  public material!: string;
+  vendor_id!: number;
+  customer_id!: number;
+  material_id!: number;
   public transaction_date!: Date;
 
   public createAt!: Date;
@@ -41,17 +41,17 @@ Transaction.init(
       primaryKey: true,
       type: DataTypes.BIGINT,
     },
-    vendor: {
-      allowNull: true,
-      type: DataTypes.STRING,
+    vendor_id: {
+      allowNull: false,
+      type: DataTypes.BIGINT,
     },
-    customer: {
-      allowNull: true,
-      type: DataTypes.STRING,
+    customer_id: {
+      allowNull: false,
+      type: DataTypes.BIGINT,
     },
-    material: {
-      allowNull: true,
-      type: DataTypes.STRING,
+    material_id: {
+      allowNull: false,
+      type: DataTypes.BIGINT,
     },
     transaction_date: {
       allowNull: false,
@@ -65,8 +65,8 @@ Transaction.init(
   }
 );
 
-Transaction.belongsTo(User, { as: "Vendor", foreignKey: "vendor_id" });
-Transaction.belongsTo(User, { as: "Customer", foreignKey: "customer_id" });
-Transaction.belongsTo(Material, { foreignKey: "material_id" });
+Transaction.belongsTo(User, { as: "vendor", foreignKey: "vendor_id" });
+Transaction.belongsTo(User, { as: "customer", foreignKey: "customer_id" });
+Transaction.belongsTo(Material, { as: "material", foreignKey: "material_id" });
 
 export default Transaction;

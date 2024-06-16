@@ -2,13 +2,15 @@
 
 ## Getting Started
 
+postman collection can be access here [backend_challenge_sanberhub.postman_collection.json](backend_challenge_sanberhub.postman_collection.json)
+
 ### Prerequisites
 
 Before you begin, make sure you have the following installed:
 
 - Node.js
 - npm or yarn
-- git
+- GIT
 - MySQL
 
 ### Installation guide
@@ -35,4 +37,10 @@ npm run create:db
 
 ```bash
 npx sequelize-cli db:migrate
+```
+
+### running app
+
+```bash
+npm run start:dev
 ```
